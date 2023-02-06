@@ -1,6 +1,9 @@
 body{
      font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
+ label{
+     font-weight: bold;
+}
  .left{
      float: left;
 }
@@ -13,9 +16,6 @@ body{
      font-size: 30px;
      width: 400px;
      height: 100px;
-}
- label{
-     font-weight: bold;
 }
  #electionTeams{
      font-size: 16px;

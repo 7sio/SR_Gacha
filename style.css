@@ -1,7 +1,58 @@
-.left{
-	float: left;
+body{
+     font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
-p{
-	margin-left: 10px;	
-	margin-right: 10px;	
+ .left{
+     float: left;
+}
+ #teams{
+     font-size: 16px;
+     width: 400px;
+     height: 300px;
+}
+ #result{
+     font-size: 30px;
+     width: 400px;
+     height: 100px;
+}
+ label{
+     font-weight: bold;
+}
+ #electionTeams{
+     font-size: 16px;
+     width: 400px;
+     height: 300px;
+}
+ #lotButton{
+     margin-top: 20px;
+}
+ #electionButton{
+     background-color: #cc8888;
+}
+ .btn{
+     margin-top: 4px;
+     width: 400px;
+     text-align: center;
+     color: #ffffff;
+     font-weight: bold;
+}
+ .area{
+     width: 400px;
+     height: 500px;
+     margin-left: 10px;
+     margin-right: 10px;
+}
+ .afterLot{
+     color: #ff0000;
+}
+ .beforeLot{
+     color: #000000;
+}
+ .btnAfterLot{
+     background-color: #cc8888;
+}
+ .btnBeforeLot{
+     background-color: #88bb88;
+}
+ .btn:hover {
+     opacity: 0.6;
 }

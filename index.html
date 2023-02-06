@@ -1,0 +1,62 @@
+<html5>
+  <head>
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("#button").on('click', function() {
+          console.info("ボタン1がクリックされました。");
+          var textarea = document.getElementById('teams').value;
+          console.info(textarea);
+          var teamList = textarea.split(/\r\n|\r|\n/);
+          for (var i = 0; i < teamList.length; i++) {
+            console.info(teamList[i]);
+          }
+          console.info($(this).text());
+          if ($(this).text() == "抽選") {
+            $(this).text("抽選中");
+            var timerId = setInterval(function() {
+              var buttonText = $("#button").text();
+              console.info("now:" + buttonText);
+              if (buttonText == "抽選") {
+                console.info("終了");
+                clearInterval(timerId);
+              }
+              var selectedNum = Math.floor(Math.random() * teamList.length);
+              console.info(selectedNum);
+              var output = teamList[selectedNum];
+              var selectedTeam = document.getElementById('result');
+              selectedTeam.value = output;
+            }, 100);
+          } else {
+            var selectedNum = Math.floor(Math.random() * teamList.length);
+            console.info(selectedNum);
+            var output = teamList[selectedNum];
+            console.info(output);
+            var selectedTeam = document.getElementById('result');
+            selectedTeam.value = output;
+            $(this).text("抽選");
+          }
+        });
+      })
+
+      function lots() {
+        console($(this).text());
+      }
+    </script>
+    <p class="left">
+      <label for="teams">参加チーム</label>
+      <br>
+      <textarea id="teams" name="teams" cols="40" rows="10" maxlength="20" placeholder="参加チームを記載。"></textarea>
+      <br>
+      <button id="button">抽選</button>
+    </p>
+    <p class="left">
+      <label for="teams">選出チーム</label>
+      <br>
+      <input type="text" id="result">
+    </p>
+  </body>
+</html5>
